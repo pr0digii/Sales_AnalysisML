@@ -72,9 +72,9 @@ def root():
         "github_repo": "https://github.com/pr0digii/Sales_AnalysisML",
     }
 
-@app.get("/health/")
+@app.get("/health/", status_code=200)
 def health():
-    return {"status": "API is healthy"}
+    return "API is healthy"
 
 @app.post("/predict/")
 def predict(data: PredictionInput):
