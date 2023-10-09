@@ -96,3 +96,6 @@ def forecast_sales(data: ForecastInput):
     # Return the forecast as JSON
     return {"forecast": loaded_forecast.tolist()}
 
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=80)
