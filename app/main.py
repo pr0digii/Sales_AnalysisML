@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
 import numpy as np
+import uvicorn
 
 app = FastAPI()
 
@@ -78,3 +79,7 @@ def forecast_sales(data: ForecastInput):
     loaded_forecast = forecasting_model.forecast(steps=num_days)
     # Return the forecast as JSON
     return {"forecast": loaded_forecast.tolist()}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
