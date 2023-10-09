@@ -1,6 +1,6 @@
-fastapi
-uvicorn
-joblib
-lightgbm
-numpy
-statsmodels
+fastapi==0.68.1
+uvicorn==0.15.0
+joblib==1.0.1
+lightgbm==3.3.1
+numpy==1.21.2
+statsmodels==0.13.0
