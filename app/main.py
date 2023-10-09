@@ -55,11 +55,27 @@ class PredictionInput(BaseModel):
     event_name_VeteransDay: float
     event_name_no_specific_event: float
 
-    
 class ForecastInput(BaseModel):
     start_date: str
     end_date: str
-    
+
+@app.get("/")
+def root():
+    return {
+        "message": "Welcome to the Sales Prediction API",
+        "endpoints": {
+            "/": "Display this message",
+            "/health/": "Check the health of the API",
+            "/predict/": "Make a sales prediction",
+            "/forecast/": "Forecast sales for a given date range",
+        },
+        "github_repo": "https://github.com/pr0digii/Sales_AnalysisML",
+    }
+
+@app.get("/health/")
+def health():
+    return {"status": "API is healthy"}
+
 @app.post("/predict/")
 def predict(data: PredictionInput):
     # Convert the data to the expected format
@@ -80,6 +96,3 @@ def forecast_sales(data: ForecastInput):
     # Return the forecast as JSON
     return {"forecast": loaded_forecast.tolist()}
 
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
