@@ -22,4 +22,4 @@ COPY ./models/forecastive/holt_winters_model.joblib ./models/forecastive/
 EXPOSE 80
 
 # Command to run the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "-c", "/gunicorn_conf.py", "main:app"]
