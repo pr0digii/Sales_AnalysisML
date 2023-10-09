@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn==0.15.0
 joblib
 lightgbm
 numpy
