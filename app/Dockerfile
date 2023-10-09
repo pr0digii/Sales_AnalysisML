@@ -1,11 +1,13 @@
 # Use the FastAPI Uvicorn base image
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
+
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy requirements and install dependencies
-COPY ./app/requirements.txt .
+COPY ./app/requirements.txt ./  
+
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy the main application
