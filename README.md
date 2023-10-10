@@ -5,7 +5,10 @@ In the diverse retail realms of California, Texas, and Wisconsin, theretailer in
 
 Make sure to follow the same folder structure before running the code and also to install required packages both the predictive one and the time series packages. 
 
-
+DOCKER COMMANDS:
+    BUILD: docker build -t predictions_api -f app/Dockerfile .
+    RUN: docker run -dit --rm --name my_predictions_api -p 8000:80 predictions_api:latest
+        
 Project Organization
 ------------
 
