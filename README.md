@@ -1,7 +1,10 @@
 Sales_analysis
 ==============================
 
-A short description of the project.
+In the diverse retail realms of California, Texas, and Wisconsin, theretailer initiated a dual-pronged strategy across its 10 stores. The goal encompassed deploying a predictive model for specific sales and a forecasting model for a 7-day aggregated sales overview across three categories: hobbies, foods, and household.
+
+Make sure to follow the same folder structure before running the code and also to install required packages both the predictive one and the time series packages. 
+
 
 Project Organization
 ------------
